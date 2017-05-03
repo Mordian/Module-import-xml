@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <flux-communiques>
     <communique>
-        <titre>Titre du communiquee 1</titre>
+        <titre>Titre du communique 1</titre>
         <corps>Un texte bleu</corps>
     </communique>
     <communique>
