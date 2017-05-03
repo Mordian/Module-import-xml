@@ -1,0 +1,40 @@
+# Configuration de la migration des communiqués.
+id: communique
+label: Communique
+migration_group: Communique
+migration_dependencies: {}
+source:
+  plugin: url
+  data_fetcher_plugin: file
+  data_parser_plugin: xml
+  urls: /var/www/html/monfichier.xml
+  item_selector: /flux-communiques/communique
+  fields:
+    -
+      name: titre
+      label: Titre
+      selector: titre
+    -
+      name: corps
+      label: Corps
+      selector: corps
+
+destination:
+  plugin: entity:node
+
+process:
+  type:
+    plugin: default_value
+    default_value: communique
+
+  title: titre
+  'field_communique_body/value': corps
+  'field_communique_body/format':
+      plugin: default_value
+      default_value: full_html
+  type:
+    plugin: default_value
+    default_value: communique
+destination:
+  plugin: entity:node
+migration_dependencies: {}
