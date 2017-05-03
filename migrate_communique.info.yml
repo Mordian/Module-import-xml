@@ -1,0 +1,9 @@
+type: module
+name: Migrate Communiqué
+description: 'Migration des communiqués.'
+package: Migration
+core: 8.x
+dependencies:
+  - migrate_tools
+  - migrate_plus
+
