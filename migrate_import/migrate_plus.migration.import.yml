@@ -1,0 +1,26 @@
+id: import
+label: 'Import'
+migration_group: default
+source:
+  plugin: url
+  urls: "/var/www/html/imports.xml"
+  data_fetcher_plugin: file
+  data_parser_plugin: xml
+  item_selector: /imports/import
+fields:
+  -
+   name: title
+   label: 'Titre'
+   selector: title
+ids:
+  id:
+    type: string
+process:
+  title: title
+  type:
+    plugin: default_value
+    default_value: import
+destination:
+  plugin: entity:node
+migration_dependencies: {}
+
