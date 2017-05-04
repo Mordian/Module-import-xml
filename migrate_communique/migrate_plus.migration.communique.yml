@@ -6,9 +6,9 @@ migration_dependencies: {}
 
 source:
   plugin: url
-  data_fetcher_plugin: file
+  data_fetcher_plugin: http
   data_parser_plugin: xml
-  urls: /var/www/html/monfichier.xml
+  urls: http://g.cabanac.free.fr/monfichier.xml
   item_selector: /flux-communiques/communique
   fields:
     -
