@@ -1,0 +1,9 @@
+name: Migrate XML to D8 import Node
+type: module
+core: 8.x
+description: 'XML to D8 import node custom module.'
+dependencies:
+  - migrate_tools
+  - migrate_plus
+
+
