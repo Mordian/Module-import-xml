@@ -1,0 +1,136 @@
+# Configuration de la migration des communiqués.
+id: stage
+label: Stage
+migration_group: Stage
+migration_dependencies: {}
+
+source:
+  #plugin:
+  #data_fetcher_plugin: file
+  data_parser_plugin: xml
+  urls: /var/www/html/jeudetestdrupal.xml
+  item_selector: /Stages/Stage
+  fields:
+    -
+      # Nom machine utilisé pour le mapping lors du processing.
+      name: id_stage
+      # Label qui sera affiché dans l'UI.
+      label: ID
+      # Nom du champ dans le XML.
+      selector: id_stage
+    -
+      name: titre
+      label: Titre
+      selector: Titre
+    -
+      name: thematique
+      label: Thematique
+      selector: Thematique
+    -
+      name: objectifs
+      label: Objectifs
+      selector: Objectifs
+    -
+      name: pre_requis
+      label: Pré-Requis
+      selector: Pre_Requis
+# Configuration de la migration des communiqués.
+id: stage
+label: Stage
+migration_group: Stage
+migration_dependencies: {}
+
+source:
+  #plugin:
+  #data_fetcher_plugin: file
+  data_parser_plugin: xml
+  urls: /var/www/html/jeudetestdrupal.xml
+  item_selector: /Stages/Stage
+  fields:
+    -
+      # Nom machine utilisé pour le mapping lors du processing.
+      name: id_stage
+      # Label qui sera affiché dans l'UI.
+      label: ID
+      # Nom du champ dans le XML.
+      selector: id_stage
+    -
+      name: titre
+      label: Titre
+      selector: Titre
+    -
+      name: thematique
+      label: Thematique
+      selector: Thematique
+    -
+      name: objectifs
+      label: Objectifs
+      selector: Objectifs
+    -
+      name: pre_requis
+      label: Pré-Requis
+      selector: Pre_Requis
+   -
+      name: public_cible
+      label: Public Ciblé
+      selector: Public_Cible
+    -
+      name: programme
+      label: Programme
+      selector: Programme
+    -
+      name: methode
+      label: Méthode
+      selector: Methode
+
+  ids:
+    id_stage: 1
+      type: string
+
+destination:
+  plugin: entity:node
+process:
+  type:
+    plugin: default_value
+    default_value: stage
+
+  title: titre
+  field_idstage: id_stage
+  'field_thematique/value': thematique
+  'field_thematique/format':
+      plugin: default_value
+      default_value: plain_text
+  'field_objectifs/value': objectifs
+  'field_objectifs/format':
+      plugin: default_value
+      default_value: plain_text
+  'field_pre_requis/value': pre_requis
+  'field_pre_requis/format':
+      plugin: default_value
+default_value: full_html
+  'field_public_cible/value': public_cible
+  'field_thematique/format':
+      plugin: default_value
+      default_value: full_html
+  'field_programme/value': programme
+  'field_programme/format':
+      plugin: default_value
+      default_value: full_html
+  'field_methode/value': methode
+  'field_methode/format':
+      plugin: default_value
+      default_value: full_html
+
+  sticky:
+    plugin: default_value
+    default_value: 0
+ uid:
+    plugin: default_value
+    default_value: 1
+
+
+
+
+
+
+
