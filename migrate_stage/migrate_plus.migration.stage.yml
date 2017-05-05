@@ -5,10 +5,10 @@ migration_group: Stage
 migration_dependencies: {}
 
 source:
-  #plugin:
-  #data_fetcher_plugin: file
+  plugin: url
+  data_fetcher_plugin: http
   data_parser_plugin: xml
-  urls: /var/www/html/jeudetestdrupal.xml
+  urls: https://pelicans.sicd/jeudetestdrupal.xml
   item_selector: /Stages/Stage
   fields:
     -
